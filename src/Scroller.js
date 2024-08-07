@@ -248,9 +248,7 @@ export default class CalendarScroller extends Component {
     // Always update weekstart/end for WeekSelectors.
     updateMonthYear && updateMonthYear(visibleStartDate, visibleEndDate);
 
-    if (visibleStartIndex === 0) {
-      this.shiftDaysBackward(visibleStartDate);
-    } else {
+    
       const minEndOffset = numDays - numVisibleItems;
       if (minEndOffset > numVisibleItems) {
         for (let a of all) {
@@ -260,7 +258,7 @@ export default class CalendarScroller extends Component {
           }
         }
       }
-    }
+    
     this.setState({
       visibleStartDate,
       visibleEndDate,
