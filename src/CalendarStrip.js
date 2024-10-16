@@ -473,7 +473,7 @@ class CalendarStrip extends Component {
       numDays = this.numDaysScroll;
       // Center start date in scroller.
       _startingDate = startingDate.clone().subtract(numDays/2, "days");
-      if (minDate && _startingDate.isBefore(minDate, "day")) {
+      if (this.props.scrollToOnSetSelectedDate && minDate && _startingDate.isBefore(minDate, "day")) {
         _startingDate = moment(minDate);
       }
     }
